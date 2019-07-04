@@ -1,35 +1,39 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
+import CardMedia from '@material-ui/core/CardMedia';
 import splash from './../assets/images/splash.jpg';
 
 const useStyles = makeStyles({
   image: {
-    height: 600,
-    width: 'auto'
+    width: '100%',
+    position: 'static',
   },
   centered: {
     display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '100%',
-    width: '60%',
+    width: '40%',
   },
   fonts:{
     color: 'white',
     fontSize: '5em',
     opacity: 0.85,
+    marginLeft: '9%'
   }
 
 });
+
+const backgroundImage = {
+  backgroundImage: `url(${splash})`
+};
 
 export default function Splash() {
   const classes = useStyles();
   return (
     <div>
-      <div className={classes.image}>
-        <img src={splash}/>
+    <div style = {backgroundImage} className={classes.image}>
+      <div className={classes.centered}>
+        <p className={classes.fonts} style={{fontFamily: 'Cinzel Decorative'}}>Ella's Chocolate Cafe</p>
       </div>
-      Heal with Chocolate
+    </div>
     </div>
 
   );
