@@ -75,7 +75,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template:'template.ejs',
       appMountId: 'react-app-root',
-      title: 'Lee & Bateman Markets',
+      title: 'Hot Chocolate Store',
       filename: resolve(__dirname, "build", "index.html"),
     }),
   ]
