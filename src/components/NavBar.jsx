@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 const useStyles = makeStyles(theme => ({
   root: {
     backgroundColor: '#f53b88',
-    opacity: '0.5',
+    opacity: '0.9',
     position: 'static',
     boxShadow: 'none'
   },
@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
       color: 'rgba(255,255,255,0.7)',
     },
     '&:active': {
-      color: 'rgba(255,95,193,1)',
+      color: 'rgba(255,95,235,1)',
     },
   },
   spacing:{
@@ -58,7 +58,6 @@ export default function NavBar() {
               <div className={classes.spacing} style={{fontFamily: 'DM Serif Display'}}>
                 <Link to="/about" style={{ textDecoration: 'none' }}><a className={classes.clicky}>About</a></Link>
               </div>
-
             </div>
           </Typography>
           <div>
