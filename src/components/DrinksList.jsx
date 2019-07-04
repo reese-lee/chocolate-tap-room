@@ -22,6 +22,20 @@ const availableDrinks = [
     price: '$6.99',
     flavor: 'Earthy and herby',
     description: 'Made with thyme, rosemary, and oregano, this one is straight from the backyard!'
-  },
-
+  }
 ]
+
+export default function DrinksList() {
+  return (
+    <div>
+      {availableDrinks.map((drinks, index)=>
+        <Drinks name={drinks.name}
+        brand={drinks.brand}
+        price={drinks.price}
+        flavor={drinks.flavor}
+        description={drinks.description}
+        key={index}/>
+      )}
+    </div>
+  )
+}
