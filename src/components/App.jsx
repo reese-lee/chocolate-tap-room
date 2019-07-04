@@ -8,10 +8,11 @@ import NavBar from './NavBar';
 import AddDrink from './AddDrink';
 import Employees from './Employees';
 import About from './About';
+import Edit from './Edit';
 
 const useStyles = makeStyles ({
   hr: {
-    margin: '20%'
+    marginTop: '20%'
   }
 })
 
@@ -26,6 +27,7 @@ function App() {
         <Route exact path='/addDrink' component={AddDrink} />
         <Route exact path='/employees' component={Employees} />
         <Route exact path='/about' component={About} />
+        <Route exact path='/edit' component={Edit} />
         <Route component={Error404}/>
       </Switch>
       <div className={classes.hr}>
