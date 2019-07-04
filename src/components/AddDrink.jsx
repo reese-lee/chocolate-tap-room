@@ -7,6 +7,7 @@ import TextField from '@material-ui/core/TextField';
 import MenuItem from '@material-ui/core/MenuItem';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
+import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -23,10 +24,16 @@ const useStyles = makeStyles(theme => ({
   title: {
     fontSize: '4em',
     textAlign: 'center'
-  }
+  },
+  button: {
+    textAlign: 'center',
+    marginTop: '5%',
+    marginLeft: '49%',
+    fontSize: '1.5em'
+  },
 }));
 
-export default function FormTest() {
+export default function AddDrink() {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '',
@@ -37,12 +44,13 @@ export default function FormTest() {
 
   return (
     <div>
-    <div style={{fontFamily: 'DM Serif Display'}} className={classes.title}>
+      <div style={{fontFamily: 'DM Serif Display'}} className={classes.title}>
       Add a new drink here!
-    </div>
-    <br></br>
-    <div className={classes.root}>
-      <TextField
+      </div>
+      <br></br>
+      <div className={classes.root}>
+        <form>
+        <TextField
         id="outlined-simple-start-adornment"
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
@@ -50,9 +58,9 @@ export default function FormTest() {
         InputProps={{
           startAdornment: <InputAdornment position="start"></InputAdornment>,
         }}
-      />
+        />
 
-      <TextField
+        <TextField
         id="outlined-simple-start-adornment"
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
@@ -60,9 +68,9 @@ export default function FormTest() {
         InputProps={{
           startAdornment: <InputAdornment position="start"></InputAdornment>,
         }}
-      />
+        />
 
-      <TextField
+        <TextField
         id="outlined-simple-start-adornment"
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
@@ -70,9 +78,9 @@ export default function FormTest() {
         InputProps={{
           startAdornment: <InputAdornment position="start">$</InputAdornment>,
         }}
-      />
+        />
 
-      <TextField
+        <TextField
         id="outlined-simple-start-adornment"
         className={clsx(classes.margin, classes.textField)}
         variant="outlined"
@@ -80,7 +88,11 @@ export default function FormTest() {
         InputProps={{
           startAdornment: <InputAdornment position="start"></InputAdornment>,
         }}
-      />
+        />
+        </form>
+      </div>
+      <div>
+        <Button className={classes.button} style={{fontFamily: 'DM Serif Display'}}>ADD!</Button>
       </div>
     </div>
   );
