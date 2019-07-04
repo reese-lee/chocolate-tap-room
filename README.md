@@ -6,7 +6,7 @@
 
 ## Description
 
-_A web app for a chocolate tap room that allows ._
+_A web app for a chocolate tap room that allows patrons to view the menu and the About page, and allows an employee to add and edit drinks._
 
 ## Setup/Installation Requirements
 
