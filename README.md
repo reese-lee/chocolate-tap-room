@@ -16,12 +16,17 @@ _A web app for a chocolate tap room that allows ._
 * _$npm run start_
 * _Open browser and navigate to *http://localhost:8080*_
 
+## Component Tree
+
+![alt text](https://github.com/reese-lee/chocolate-tap-room/blob/master/src/assets/images/componenttree.svg "Component Tree")
+
 ## Specs
 
 |     Behavior    |  Input | Output
 | ------------- | ----- | ----- |
-| 1. Patron can view menu | Click on menu | View menu |
-| 2.  
+| 1. Patron can view menu | Click on Menu | View menu |
+| 2. Patron can view About Page | Click on About | View bio |
+| 3. Employee can go to Employee page | Click on Employees | View options for employee |
 
 
 ## Support and contact details
