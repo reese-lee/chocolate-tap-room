@@ -10,7 +10,10 @@ import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
   root: {
-    backgroundColor: 'transparent'
+    backgroundColor: '#f53b88',
+    opacity: '0.5',
+    position: 'static',
+    boxShadow: 'none'
   },
   menuButton: {
     marginRight: theme.spacing(2),
@@ -29,11 +32,11 @@ const useStyles = makeStyles(theme => ({
     },
   },
   spacing:{
-    width: '150px',
+    width: '350px',
     display: 'flex',
     flexFlow: 'row',
     justifyContent: 'spaceBetween',
-    alignItems: 'center',
+    alignItems: 'center'
   }
 }));
 
@@ -42,24 +45,25 @@ export default function NavBar() {
 
   return (
     <div className={classes.root}>
-      <AppBar position="static">
+      <AppBar className={classes.root} position="absolute">
         <Toolbar>
-          <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="Menu">
-            <MenuIcon />
-          </IconButton>
           <Typography variant="h6" className={classes.title}>
             <div className={classes.spacing}>
-              <div className={classes.spacing}>
+              <div className={classes.spacing} style={{fontFamily: 'DM Serif Display'}}>
                 <Link to="/" style={{ textDecoration: 'none' }}><a className={classes.clicky}>Home</a></Link>
               </div>
-              <div className={classes.spacing}>
+              <div className={classes.spacing} style={{fontFamily: 'DM Serif Display'}}>
                 <Link to="/drinks" style={{ textDecoration: 'none' }}><a className={classes.clicky}>Menu</a></Link>
+              </div>
+              <div className={classes.spacing} style={{fontFamily: 'DM Serif Display'}}>
+                <Link to="/about" style={{ textDecoration: 'none' }}><a className={classes.clicky}>About</a></Link>
               </div>
 
             </div>
-
           </Typography>
-          <Button color="inherit">Login</Button>
+          <div>
+            <Link to="/employees" style={{ textDecoration: 'none' }}><a className={classes.clicky} style={{fontFamily: 'DM Serif Display'}}>EMPLOYEES ONLY</a></Link>
+          </div>
         </Toolbar>
       </AppBar>
     </div>
