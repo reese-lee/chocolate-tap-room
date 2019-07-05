@@ -27,7 +27,8 @@ _A web app for a chocolate tap room that allows patrons to view the menu and the
 | 1. Patron can view menu | Click on Menu | View menu |
 | 2. Patron can view About Page | Click on About | View bio |
 | 3. Employee can go to Employee page | Click on Employees | View options for employee |
-
+| 4. Employee can choose to add drinks | Click on Add drinks | Form to add drinks appears |
+| 5. Employee can choose to edit drinks | Click on Edit drinks | Choose an option to edit |
 
 ## Support and contact details
 
