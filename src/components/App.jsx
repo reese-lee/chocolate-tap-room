@@ -9,6 +9,7 @@ import AddDrink from './AddDrink';
 import Employees from './Employees';
 import About from './About';
 import Edit from './Edit';
+import EditDrinks from './EditDrinks';
 
 const useStyles = makeStyles ({
   hr: {
@@ -28,6 +29,7 @@ function App() {
         <Route exact path='/employees' component={Employees} />
         <Route exact path='/about' component={About} />
         <Route exact path='/edit' component={Edit} />
+        <Route exact path='/editDrinks' component={EditDrinks} />
         <Route component={Error404}/>
       </Switch>
       <div className={classes.hr}>
