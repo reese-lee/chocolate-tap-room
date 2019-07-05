@@ -23,14 +23,22 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     fontSize: '4em',
-    textAlign: 'center'
+    textAlign: 'center',
+    color: '#36d9a0'
   },
   button: {
     textAlign: 'center',
     marginTop: '5%',
     marginLeft: '49%',
-    fontSize: '1.5em'
-  },
+    fontSize: '1.5em',
+    color: '#36d9a0',
+    '&:hover': {
+      color: '#f53b88',
+    },
+    '&:active': {
+      color: '#f2f549',
+    },
+  }
 }));
 
 export default function AddDrink() {
