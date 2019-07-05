@@ -10,6 +10,7 @@ import Employees from './Employees';
 import About from './About';
 import Edit from './Edit';
 import EditDrinks from './EditDrinks';
+import EditPints from './EditPints';
 
 const useStyles = makeStyles ({
   hr: {
@@ -30,6 +31,7 @@ function App() {
         <Route exact path='/about' component={About} />
         <Route exact path='/edit' component={Edit} />
         <Route exact path='/editDrinks' component={EditDrinks} />
+        <Route exact path='/editPints' component={EditPints} />
         <Route component={Error404}/>
       </Switch>
       <div className={classes.hr}>
