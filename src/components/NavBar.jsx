@@ -28,7 +28,7 @@ const useStyles = makeStyles(theme => ({
       color: 'rgba(255,255,255,0.7)',
     },
     '&:active': {
-      color: 'rgba(255,95,235,1)',
+      color: '#f2f549',
     },
   },
   spacing:{
