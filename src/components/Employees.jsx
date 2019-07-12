@@ -34,9 +34,23 @@ class Employees extends React.Component {
       price: null,
       description: null
     }
+    this.handleAddNewDrink = this.handleAddNewDrink.bind(this);
+  }
+
+  handleAddNewDrink(drink) {
+    let name = drink.name
+    let brand = drink.brand
+    let price = drink.price
+    let description = drink.description
+    this.setState({
+      name: name,
+      brand: brand,
+      price: price,
+      description: description
+    })
   }
   const classes = useStyles();
-  return (
+{/*  return (
     <div>
       <div className={classes.title} style={{fontFamily: 'DM Serif Display'}}>
         What would you like to accomplish today?
@@ -46,7 +60,7 @@ class Employees extends React.Component {
         <br></br>
         <Link style={{ textDecoration: 'none' }} to="/edit"><a className={classes.clicky}>Edit drinks</a></Link>
       </div>
-    </div>
+    </div> */}
 )}
 
 export Employees;
