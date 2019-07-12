@@ -26,6 +26,7 @@ const useStyles = makeStyles({
 
 
 class Employees extends React.Component {
+
   constructor(){
     super();
     this.state = {
@@ -50,21 +51,24 @@ class Employees extends React.Component {
       description: description
     })
   }
-  const classes = useStyles();
+
+
+
   render() {
     return(
       <div>
-        <div className={classes.title} style={{fontFamily: 'DM Serif Display'}}>
+        <div style={{fontFamily: 'DM Serif Display'}}>
           What would you like to accomplish today?
         </div>
-        <div className={classes.text} style={{fontFamily: 'DM Serif Display'}}>
-          <Link style={{ textDecoration: 'none' }} to="/addDrink"><a className={classes.clicky}>Add a new drink</a></Link>
+        <div style={{fontFamily: 'DM Serif Display'}}>
+          <Link style={{ textDecoration: 'none' }} to="/addDrink"><a>Add a new drink</a></Link>
           <br></br>
-          <Link style={{ textDecoration: 'none' }} to="/edit"><a className={classes.clicky}>Edit drinks</a></Link>
+          <Link style={{ textDecoration: 'none' }} to="/edit"><a>Edit drinks</a></Link>
         </div>
       </div>
 
     )
   }
+}
 
-export Employees;
+export default Employees;
