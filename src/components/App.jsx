@@ -39,12 +39,16 @@ class App extends React.Component {
         <NavBar/>
         <Switch>
           <Route exact path='/' component={Splash} />
+
           <Route exact path='/drinks' render={()=><DrinksList drinksList={this.state.masterDrinkList}/>} />
+
           <Route exact path='/addDrink' render={()=><NewDrinkControl onNewDrink={this.handleAddingNewDrinkToList}/>} />
+
           <Route path='/employees' render={(props)=><Employees drinksList={this.state.masterDrinkList}
           currentRouterPath={props.location.pathname}
           onDrinkSelection={this.state.handleEditingSelectedDrink}
           selectedDrink={this.state.selectedDrink} />} />
+
           <Route exact path='/about' component={About} />
           <Route component={Error404}/>
         </Switch>
