@@ -2,15 +2,29 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Drinks(props){
-  return (
-    <div>
-      <h4>{props.name}</h4>
-      <h5>{props.price}</h5>
-      <h5>{props.flavor}</h5>
-      <h5>{props.description}</h5>
-      <h5>{props.pints}</h5>
-    </div>
-  )
+  const drinkInformation =
+  <div>
+    <ul>
+      <li>{props.name}</li>
+      <li>{props.brand}</li>
+      <li>{props.price}</li>
+      <li>{props.description}</li>
+    </ul>
+  </div>;
+
+  if(props.currentRouterPath === '/employees') {
+    return (
+      <div onClick={()=> {props.onDrinkSelection(props.drinkId);}}>
+        {drinkInformation}
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        {drinkInformation}
+      </div>
+    );
+  }
 }
 
 Drinks.propTypes = {
