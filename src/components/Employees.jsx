@@ -25,7 +25,7 @@ const useStyles = makeStyles({
 })
 
 
-export default function Employees() {
+class Employees extends React.Component {
   const classes = useStyles();
   return (
     <div>
@@ -39,3 +39,5 @@ export default function Employees() {
       </div>
     </div>
 )}
+
+export Employees;
