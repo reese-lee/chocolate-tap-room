@@ -8,37 +8,52 @@ import NavBar from './NavBar';
 import AddDrink from './AddDrink';
 import Employees from './Employees';
 import About from './About';
-import Edit from './Edit';
-import EditDrinks from './EditDrinks';
-import EditPints from './EditPints';
+import { v4 } from 'uuid';
 
-const useStyles = makeStyles ({
-  hr: {
-    marginTop: '20%'
+class App extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      masterDrinklist: {},
+      selectedDrink: null
+    }
+    this.handleAddingNewDrinkToList = this.handleAddingNewDrinkToList.bind(this);
+    this.handleEditingSelectedDrink = this.handleEditingSelectedDrink.bind(this);
   }
-})
 
-function App() {
-  const classes = useStyles();
-  return(
-    <div>
-      <NavBar/>
-      <Switch>
-        <Route exact path='/' component={Splash} />
-        <Route exact path='/drinks' component={DrinksList} />
-        <Route exact path='/addDrink' component={AddDrink} />
-        <Route exact path='/employees' component={Employees} />
-        <Route exact path='/about' component={About} />
-        <Route exact path='/edit' component={Edit} />
-        <Route exact path='/editDrinks' component={EditDrinks} />
-        <Route exact path='/editPints' component={EditPints} />
-        <Route component={Error404}/>
-      </Switch>
-      <div className={classes.hr}>
-        <hr></hr>
+  handleAddingNewDrinkToList(newDrink) {
+    let newDrinkId = v4()
+    let newMasterDrinkList = Object.assign({}, this.state.masterDrinkList, {
+      [newDrinkId]: newDrink
+    });
+    this.setState({masterDrinkList: newMasterDrinkList})
+  }
+
+  handleEditingSelectedDrink(drinkId){
+    this.setState({selectedDrink: drinkId});
+  }
+
+  render() {
+    return(
+      <div>
+        <NavBar/>
+        <Switch>
+          <Route exact path='/' component={Splash} />
+          <Route exact path='/drinks' render={()=><DrinksList drinksList={this.state.masterDrinkList}/>} />
+          <Route exact path='/addDrink' render={()=><NewDrinkControl onNewDrink={this.handleAddingNewDrinkToList}/>} />
+          <Route path='/employees' render={(props)=><Employees drinksList={this.state.masterDrinkList}
+          currentRouterPath={props.location.pathname}
+          onDrinkSelection={this.state.handleEditingSelectedDrink}
+          selectedDrink={this.state.selectedDrink} />} />
+          <Route exact path='/about' component={About} />
+          <Route component={Error404}/>
+        </Switch>
+        <div>
+          <hr/>
+        </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default App;
