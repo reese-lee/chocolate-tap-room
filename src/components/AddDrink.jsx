@@ -8,6 +8,7 @@ import MenuItem from '@material-ui/core/MenuItem';
 import Visibility from '@material-ui/icons/Visibility';
 import VisibilityOff from '@material-ui/icons/VisibilityOff';
 import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -41,7 +42,7 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function AddDrink() {
+export default function AddDrink(props) {
   const classes = useStyles();
   const [values, setValues] = React.useState({
     name: '',
@@ -50,6 +51,15 @@ export default function AddDrink() {
     description: ''
   });
 
+  function handleNewFormSubmission(event) {
+    event.preventDefault();
+    props.onNewDrink({name: _name.value, brand: _brand.value, price: _price.value, description: _description.value})
+    _name.value = '',
+    _brand.value = '',
+    _price.value = '',
+    _description.value = ''
+  }
+
   return (
     <div>
       <div style={{fontFamily: 'DM Serif Display'}} className={classes.title}>
@@ -57,7 +67,7 @@ export default function AddDrink() {
       </div>
       <br></br>
       <div className={classes.root}>
-        <form>
+        <form onSubmit = {handleNewFormSubmission}>
         <TextField
         id="outlined-simple-start-adornment"
         className={clsx(classes.margin, classes.textField)}
@@ -100,8 +110,12 @@ export default function AddDrink() {
         </form>
       </div>
       <div>
-        <Button className={classes.button} style={{fontFamily: 'DM Serif Display'}}>ADD!</Button>
+        <Button type="submit" className={classes.button} style={{fontFamily: 'DM Serif Display'}}>ADD!</Button>
       </div>
     </div>
   );
+}
+
+Form.propTypes = {
+  onNewDrink: PropTypes.func
 }
