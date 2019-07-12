@@ -1,13 +1,5 @@
 import React from 'react';
-import clsx from 'clsx';
 import { makeStyles } from '@material-ui/core/styles';
-import IconButton from '@material-ui/core/IconButton';
-import InputAdornment from '@material-ui/core/InputAdornment';
-import TextField from '@material-ui/core/TextField';
-import MenuItem from '@material-ui/core/MenuItem';
-import Visibility from '@material-ui/icons/Visibility';
-import VisibilityOff from '@material-ui/icons/VisibilityOff';
-import Button from '@material-ui/core/Button';
 import PropTypes from 'prop-types';
 
 const useStyles = makeStyles(theme => ({
@@ -42,22 +34,20 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-export default function AddDrink(props) {
+function AddDrink(props) {
   const classes = useStyles();
-  const [values, setValues] = React.useState({
-    name: '',
-    brand: '',
-    price: '',
-    description: ''
-  });
+  let _name = null;
+  let _brand = null;
+  let _price = null;
+  let _description = null;
 
   function handleNewFormSubmission(event) {
     event.preventDefault();
     props.onNewDrink({name: _name.value, brand: _brand.value, price: _price.value, description: _description.value})
-    _name.value = '',
-    _brand.value = '',
-    _price.value = '',
-    _description.value = ''
+    _name.value = '';
+    _brand.value = '';
+    _price.value = '';
+    _description.value = '';
   }
 
   return (
@@ -68,54 +58,39 @@ export default function AddDrink(props) {
       <br></br>
       <div className={classes.root}>
         <form onSubmit = {handleNewFormSubmission}>
-        <TextField
-        id="outlined-simple-start-adornment"
-        className={clsx(classes.margin, classes.textField)}
-        variant="outlined"
-        label="Name of Drink"
-        InputProps={{
-          startAdornment: <InputAdornment position="start"></InputAdornment>,
-        }}
+        <input
+          type='text'
+          id='name'
+          placeholder = 'Name of Drink'
+          ref={(input) => {_name = input;}}
         />
-
-        <TextField
-        id="outlined-simple-start-adornment"
-        className={clsx(classes.margin, classes.textField)}
-        variant="outlined"
-        label="Brand"
-        InputProps={{
-          startAdornment: <InputAdornment position="start"></InputAdornment>,
-        }}
+        <input
+          type='text'
+          id='brand'
+          placeholder = 'Brand of Drink'
+          ref={(input) => {_brand = input;}}
         />
-
-        <TextField
-        id="outlined-simple-start-adornment"
-        className={clsx(classes.margin, classes.textField)}
-        variant="outlined"
-        label="Price"
-        InputProps={{
-          startAdornment: <InputAdornment position="start">$</InputAdornment>,
-        }}
+        <input
+          type='text'
+          id='price'
+          placeholder = 'Price'
+          ref={(input) => {_price = input;}}
         />
-
-        <TextField
-        id="outlined-simple-start-adornment"
-        className={clsx(classes.margin, classes.textField)}
-        variant="outlined"
-        label="Description"
-        InputProps={{
-          startAdornment: <InputAdornment position="start"></InputAdornment>,
-        }}
+        <input
+          type='textarea'
+          id='description'
+          placeholder = 'Description'
+          ref={(textarea) => {_description = textarea;}}
         />
+        <button type="submit" className={classes.button} style={{fontFamily: 'DM Serif Display'}}>ADD!</button>
         </form>
-      </div>
-      <div>
-        <Button type="submit" className={classes.button} style={{fontFamily: 'DM Serif Display'}}>ADD!</Button>
       </div>
     </div>
   );
 }
 
-Form.propTypes = {
+AddDrink.propTypes = {
   onNewDrink: PropTypes.func
-}
+};
+
+export default AddDrink;
