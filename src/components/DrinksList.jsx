@@ -2,6 +2,7 @@ import React from 'react';
 import Drinks from './Drinks';
 import { makeStyles } from '@material-ui/core/styles';
 import CardMedia from '@material-ui/core/CardMedia';
+import PropTypes from 'prop-types';
 
 const availableDrinks = [
   {
@@ -58,7 +59,9 @@ function DrinksList(props) {
 }
 
 DrinksList.propTypes = {
-  drinksList: PropTypes.object
+  drinksList: PropTypes.object,
+  currentRouterPath: PropTypes.string,
+  onDrinkSelection: PropTypes.func
 };
 
 export default DrinksList;
