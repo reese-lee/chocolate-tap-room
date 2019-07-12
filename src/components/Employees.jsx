@@ -26,6 +26,15 @@ const useStyles = makeStyles({
 
 
 class Employees extends React.Component {
+  constructor(){
+    super();
+    this.state = {
+      name: null,
+      brand: null,
+      price: null,
+      description: null
+    }
+  }
   const classes = useStyles();
   return (
     <div>
