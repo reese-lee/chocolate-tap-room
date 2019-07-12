@@ -40,25 +40,25 @@ const useStyles = makeStyles ({
   }
 })
 
-export default function DrinksList() {
+function DrinksList(props) {
   const classes = useStyles();
   return (
     <div>
-      <div style={{fontFamily: 'DM Serif Display'}}>
-        <div className={classes.title}>
-        Our Offerings
-        </div>
-        <div className={classes.text}>
-          {availableDrinks.map((drinks, index)=>
-            <Drinks name={drinks.name}
-            price={drinks.price}
-            flavor={drinks.flavor}
-            pints={drinks.pints}
-            description={drinks.description}
-            key={index}/>
-          )}
-        </div>
-      </div>
+      {Object.keys(props.drinksList).map(function(drinkId){
+        let drink = props.drinksList[drinkId];
+        return <Drinks name={drinks.name}
+        price={drinks.price}
+        flavor={drinks.flavor}
+        pints={drinks.pints}
+        description={drinks.description}
+        key={index}/>
+      })}
     </div>
-  )
+  );
 }
+
+DrinksList.propTypes = {
+  drinksList: PropTypes.object
+};
+
+export default DrinksList;
