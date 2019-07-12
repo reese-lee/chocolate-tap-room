@@ -32,7 +32,10 @@ Drinks.propTypes = {
   brand: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
-  ticketid: PropTypes.string.isRequired
+  ticketid: PropTypes.string.isRequired,
+  currentRouterPath: PropTypes.string,
+  onDrinkSelection: PropTypes.func,
+  drinkId: PropTypes.string.isRequired
 };
 
 export default Drinks;
