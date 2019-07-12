@@ -2,6 +2,9 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import { Link } from 'react-router-dom';
 import AddDrink from './AddDrink';
+import DrinksList from './DrinksList';
+import DrinkDetail from './DrinkDetail';
+import PropTypes from 'prop-types';
 
 const useStyles = makeStyles({
   title: {
@@ -23,38 +26,29 @@ const useStyles = makeStyles({
   },
 })
 
-class Employees extends React.Component {
-  constructor(){
-    super();
-    this.state = {
-      masterDrinklist: {}
-    }
-    this.handleAddingNewDrinkToList = this.handleAddingNewDrinkToList.bind(this);
+function Employees(props) {
+  let optionalSelectedDrinkContent = null;
+  if(props.selectedDrink != null) {
+    optionalSelectedDrinkContent = <DrinkDetail selectedDrink={props.drinksList[props.selectedDrink]}/>;
   }
-
-  handleAddingNewDrinkToList(newDrink) {
-    let newDrinkId = v4()
-    let newMasterDrinkList = Object.assign({}, this.state.masterDrinkList, {
-      [newDrinkId]: newDrink
-    });
-    this.setState({masterDrinkList: newMasterDrinkList})
-  }
-
-  render() {
-    return(
-      <div>
-        <div style={{fontFamily: 'DM Serif Display'}}>
-          What would you like to accomplish today?
-        </div>
-        <div style={{fontFamily: 'DM Serif Display'}}>
-          <Link style={{ textDecoration: 'none' }} to="/addDrink" AddDrink onNewDrink={this.handleAddingNewDrinkToList}><a>Add a new drink</a></Link>
-          <br></br>
-          <Link style={{ textDecoration: 'none' }} to="/edit"><a>Edit drinks</a></Link>
-        </div>
-      </div>
-
+  return(
+    <div>
+      <h2>Employees Only</h2>
+      {optionalSelectedDrinkContent}
+      <DrinksList
+        drinksList={props.drinksList}
+        currentRouterPath={props.currentRouterPath}
+        onDrinkSelection={props.onDrinkSelection} />
+    </div>
     )
   }
-}
+
+  Employees.propTypes = {
+    drinksList: PropTypes.object,
+    currentRouterPath: PropTypes.string.isRequired,
+    onDrinkSelection: PropTypes.func.isRequired,
+    selectedDrink: PropTypes.string
+  }
+
 
 export default Employees;
