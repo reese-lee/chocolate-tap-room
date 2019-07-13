@@ -4,7 +4,6 @@ import AddDrink from './AddDrink';
 import PropTypes from 'prop-types';
 
 class NewDrinkControl extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
