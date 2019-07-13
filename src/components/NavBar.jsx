@@ -3,9 +3,6 @@ import { makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import IconButton from '@material-ui/core/IconButton';
-import MenuIcon from '@material-ui/icons/Menu';
 import { Link } from 'react-router-dom';
 
 const useStyles = makeStyles(theme => ({
@@ -53,7 +50,7 @@ export default function NavBar() {
                 <Link to="/" style={{ textDecoration: 'none' }}><a className={classes.clicky}>Home</a></Link>
               </div>
               <div className={classes.spacing} style={{fontFamily: 'DM Serif Display'}}>
-                <Link to="/drinks" style={{ textDecoration: 'none' }}><a className={classes.clicky}>Menu</a></Link>
+                <Link to="/drinks" style={{ textDecoration: 'none' }}><a className={classes.clicky}>Add A Drink</a></Link>
               </div>
               <div className={classes.spacing} style={{fontFamily: 'DM Serif Display'}}>
                 <Link to="/about" style={{ textDecoration: 'none' }}><a className={classes.clicky}>About</a></Link>
@@ -61,7 +58,7 @@ export default function NavBar() {
             </div>
           </Typography>
           <div>
-            <Link to="/employees" style={{ textDecoration: 'none' }}><a className={classes.clicky} style={{fontFamily: 'DM Serif Display'}}>EMPLOYEES ONLY</a></Link>
+            <Link to="/EmployeeConfirmation" style={{ textDecoration: 'none' }}><a className={classes.clicky} style={{fontFamily: 'DM Serif Display'}}>Employees Only</a></Link>
           </div>
         </Toolbar>
       </AppBar>
