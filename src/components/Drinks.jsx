@@ -6,8 +6,8 @@ function Drinks(props){
   <div>
     <ul>
       <li>{props.name}</li>
-      <li>{props.brand}</li>
       <li>{props.price}</li>
+      <li>{props.flavor}</li>
       <li>{props.description}</li>
     </ul>
   </div>;
