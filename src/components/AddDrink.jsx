@@ -43,10 +43,10 @@ function AddDrink(props) {
 
   function handleNewFormSubmission(event) {
     event.preventDefault();
-    props.onNewDrink({name: _name.value, brand: _brand.value, price: _price.value, description: _description.value})
+    props.onNewDrink({name: _name.value, price: _price.value, flavor: _flavor.value, description: _description.value})
     _name.value = '';
-    _brand.value = '';
     _price.value = '';
+    _flavor.value = '';
     _description.value = '';
   }
 
@@ -66,21 +66,21 @@ function AddDrink(props) {
         />
         <input
           type='text'
-          id='brand'
-          placeholder = 'Brand of Drink'
-          ref={(input) => {_brand = input;}}
-        />
-        <input
-          type='text'
           id='price'
           placeholder = 'Price'
           ref={(input) => {_price = input;}}
         />
         <input
-          type='textarea'
+          type='text'
+          id='flavor'
+          placeholder = 'Flavor'
+          ref={(input) => {_flavor = input;}}
+        />
+        <input
+          type='input'
           id='description'
           placeholder = 'Description'
-          ref={(textarea) => {_description = textarea;}}
+          ref={(input) => {_description = input;}}
         />
         <button type="submit" className={classes.button} style={{fontFamily: 'DM Serif Display'}}>ADD!</button>
         </form>
