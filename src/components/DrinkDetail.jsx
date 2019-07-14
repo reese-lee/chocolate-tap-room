@@ -6,8 +6,8 @@ function DrinkDetail(props){
     <div>
       <hr/>
       <h2>{props.selectedDrink.name}</h2>
-      <h3>{props.selectedDrink.brand}</h3>
       <h3>{props.selectedDrink.price}</h3>
+      <h3>{props.selectedDrink.flavor}</h3>
       <h3>{props.selectedDrink.description}</h3>
       <hr/>
     </div>
