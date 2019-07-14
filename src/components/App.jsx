@@ -14,7 +14,12 @@ class App extends React.Component {
   constructor(props){
     super(props);
     this.state = {
-      masterDrinklist: {},
+      masterDrinkList: [{
+        name: 'The Lucy Liu',
+        price: '$5.99',
+        flavor: 'Spicy and Sweet',
+        description: 'OOur world-famous old-fashioned milk chocolate with a kick of jalapeno and chili spices.'
+      }],
       selectedDrink: null
     }
     this.handleAddingNewDrinkToList = this.handleAddingNewDrinkToList.bind(this);
@@ -39,12 +44,16 @@ class App extends React.Component {
         <NavBar/>
         <Switch>
           <Route exact path='/' component={Splash} />
+
           <Route exact path='/drinks' render={()=><DrinksList drinksList={this.state.masterDrinkList}/>} />
+
           <Route exact path='/addDrink' render={()=><NewDrinkControl onNewDrink={this.handleAddingNewDrinkToList}/>} />
+
           <Route path='/employees' render={(props)=><Employees drinksList={this.state.masterDrinkList}
           currentRouterPath={props.location.pathname}
           onDrinkSelection={this.state.handleEditingSelectedDrink}
           selectedDrink={this.state.selectedDrink} />} />
+
           <Route exact path='/about' component={About} />
           <Route component={Error404}/>
         </Switch>
