@@ -44,16 +44,15 @@ const useStyles = makeStyles ({
 function DrinksList(props) {
   const classes = useStyles();
   return (
-    <div>
-      {Object.keys(props.drinksList).map(function(drinkId){
-        let drink = props.drinksList[drinkId];
-        return <Drinks name={drinks.name}
+    <div className={classes.title}>
+      {drinksList.map((drinks, index)=>
+        <Drinks
+        name={drinks.name}
         price={drinks.price}
         flavor={drinks.flavor}
-        pints={drinks.pints}
         description={drinks.description}
         key={index}/>
-      })}
+      )}
     </div>
   );
 }
