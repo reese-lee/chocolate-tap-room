@@ -58,7 +58,7 @@ export default function NavBar() {
             </div>
           </Typography>
           <div>
-            <Link to="/addDrinks" style={{ textDecoration: 'none' }}><a className={classes.clicky} style={{fontFamily: 'DM Serif Display'}}>EMPLOYEES ONLY</a></Link>
+            <Link to="/addDrink" style={{ textDecoration: 'none' }}><a className={classes.clicky} style={{fontFamily: 'DM Serif Display'}}>EMPLOYEES ONLY</a></Link>
           </div>
         </Toolbar>
       </AppBar>
