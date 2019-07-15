@@ -17,7 +17,7 @@ class App extends React.Component {
         name: 'The Lucy Liu',
         price: '$5.99',
         flavor: 'Spicy and Sweet',
-        description: 'OOur world-famous old-fashioned milk chocolate with a kick of jalapeno and chili spices.'
+        description: 'Our world-famous old-fashioned milk chocolate with a kick of jalapeno and chili spices.'
       },
       {
         name: 'The Old-Fashioned',
