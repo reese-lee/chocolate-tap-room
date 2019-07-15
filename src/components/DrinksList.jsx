@@ -1,32 +1,7 @@
 import React from 'react';
 import Drinks from './Drinks';
 import { makeStyles } from '@material-ui/core/styles';
-import CardMedia from '@material-ui/core/CardMedia';
 import PropTypes from 'prop-types';
-
-const availableDrinks = [
-  {
-    name: 'The Lucy Liu',
-    price: '$6.99',
-    flavor: 'Spicy Milk Chocolate',
-    pints: '124',
-    description: 'Our popular, old-fashioned milk chocolate with a kick of jalapeno and chili spices.'
-  },
-  {
-    name: 'The Old-Fashioned',
-    price: '$4.99',
-    flavor: 'Milk Chocolate',
-    pints: '124',
-    description: "The original recipe that started in Grandma's kitchen, and built us into a nationwide chocolate force."
-  },
-  {
-    name: 'The Herb Garden',
-    price: '$6.99',
-    flavor: 'Earthy and herby',
-    pints: '124',
-    description: 'Made with thyme, rosemary, and oregano, this one is straight from the backyard!'
-  }
-]
 
 const useStyles = makeStyles ({
   text: {
@@ -41,7 +16,7 @@ const useStyles = makeStyles ({
   }
 })
 
-function DrinksList(props) {
+export default function DrinksList(props) {
   const classes = useStyles();
   return (
     <div className={classes.title}>
@@ -58,9 +33,7 @@ function DrinksList(props) {
 }
 
 DrinksList.propTypes = {
-  drinksList: PropTypes.object,
+  drinksList: PropTypes.array,
   currentRouterPath: PropTypes.string,
   onDrinkSelection: PropTypes.func
 };
-
-export default DrinksList;
