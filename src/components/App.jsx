@@ -39,7 +39,8 @@ class App extends React.Component {
   }
 
   handleAddingNewDrinkToList(newDrink) {
-    let newMasterDrinkList = this.state.masterDrinkList.push(newDrink);
+    let newMasterDrinkList = this.state.masterDrinkList.concat();
+    newMasterDrinkList.unshift(newDrink);
     this.setState({masterDrinkList: newMasterDrinkList});
   }
 
@@ -57,8 +58,6 @@ class App extends React.Component {
           <Route exact path='/drinks' render={()=><DrinksList drinksList={this.state.masterDrinkList}/>} />
 
           <Route exact path='/addDrink' render={()=><NewDrinkControl onNewDrink={this.handleAddingNewDrinkToList}/>} />
-
-          <Route path='/employees' render={(props)=><Employees drinksList={this.state.masterDrinkList} />} />
 
           <Route exact path='/about' component={About} />
           <Route component={Error404}/>
