@@ -37,8 +37,8 @@ const useStyles = makeStyles(theme => ({
 function AddDrink(props) {
   const classes = useStyles();
   let _name = null;
-  let _brand = null;
   let _price = null;
+  let _flavor = null;
   let _description = null;
 
   function handleNewFormSubmission(event) {
@@ -58,31 +58,31 @@ function AddDrink(props) {
       <br></br>
       <div className={classes.root}>
         <form onSubmit = {handleNewFormSubmission}>
-        <input
-          type='text'
-          id='name'
-          placeholder = 'Name of Drink'
-          ref={(input) => {_name = input;}}
-        />
-        <input
-          type='text'
-          id='price'
-          placeholder = 'Price'
-          ref={(input) => {_price = input;}}
-        />
-        <input
-          type='text'
-          id='flavor'
-          placeholder = 'Flavor'
-          ref={(input) => {_flavor = input;}}
-        />
-        <input
-          type='input'
-          id='description'
-          placeholder = 'Description'
-          ref={(input) => {_description = input;}}
-        />
-        <button type="submit" className={classes.button} style={{fontFamily: 'DM Serif Display'}}>ADD!</button>
+          <input
+            type='text'
+            id='name'
+            placeholder = 'Name of Drink'
+            ref={(input) => {_name = input;}}
+          />
+          <input
+            type='text'
+            id='price'
+            placeholder = 'Price'
+            ref={(input) => {_price = input;}}
+          />
+          <input
+            type='text'
+            id='flavor'
+            placeholder = 'Flavor'
+            ref={(input) => {_flavor = input;}}
+          />
+          <input
+            type='input'
+            id='description'
+            placeholder = 'Description'
+            ref={(input) => {_description = input;}}
+          />
+          <button type="submit" className={classes.button} style={{fontFamily: 'DM Serif Display'}}>ADD!</button>
         </form>
       </div>
     </div>
