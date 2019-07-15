@@ -8,6 +8,7 @@ import NavBar from './NavBar';
 import AddDrink from './AddDrink';
 import Employees from './Employees';
 import About from './About';
+import NewDrinkControl from './NewDrinkControl';
 
 class App extends React.Component {
   constructor(props){
