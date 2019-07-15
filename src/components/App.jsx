@@ -9,6 +9,7 @@ import AddDrink from './AddDrink';
 import Employees from './Employees';
 import About from './About';
 import NewDrinkControl from './NewDrinkControl';
+import EmployeeConfirmation from './EmployeeConfirmation';
 
 class App extends React.Component {
   constructor(props){
