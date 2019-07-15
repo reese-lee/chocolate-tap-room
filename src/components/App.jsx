@@ -40,7 +40,7 @@ class App extends React.Component {
 
   handleAddingNewDrinkToList(newDrink) {
     let newMasterDrinkList = this.state.masterDrinkList.push(newDrink);
-    this.setState({masterDrinkList: newMasterDrinkList})
+    this.setState({masterDrinkList: newMasterDrinkList});
   }
 
   handleEditingSelectedDrink(drinkId){
